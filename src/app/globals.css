@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-cyan: #007AAD;
+  --color-brand-cyan-light: #1693C7;
+  --color-brand-cyan-dark: #005F87;
+  --color-brand-mist: #D9E2E9;
+  --color-brand-mist-subtle: #EDF3F7;
+  --color-brand-offwhite: #FFFBFC;
+  --color-brand-navy: #0C1D32;
+  --color-brand-navy-card: #112742;
+  --color-brand-navy-surface: #081423;
+
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+:root {
+  --cyan: #007AAD;
+  --mist: #D9E2E9;
+  --offwhite: #FFFBFC;
+  --navy: #0C1D32;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0C1D32;
+  color: #0C1D32;
+}
+
+body {
+  background-color: #FFFBFC;
+  color: #0C1D32;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #007AAD;
+  color: #FFFFFF;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0C1D32;
+}
+::-webkit-scrollbar-thumb {
+  background: #007AAD;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1693C7;
+}
+
+/* Editorial Gradient Masks for Seamless Image Integration */
+.mask-hero-fade {
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, black 40%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, black 40%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+}
+
+.mask-edge-fade {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.mask-card-glow {
+  mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 100%);
+}
+
+/* Glassmorphism Accents */
+.glass-header {
+  background: rgba(12, 29, 50, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(217, 226, 233, 0.12);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-navy {
+  background: rgba(17, 39, 66, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(217, 226, 233, 0.15);
+}
+
+.glass-card-light {
+  background: rgba(255, 251, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 226, 233, 0.8);
+}
+
+/* Technical Airflow Subtle Keyframes */
+@keyframes airflow {
+  0% {
+    transform: translateY(0px) scaleX(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-8px) scaleX(1.04);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(0px) scaleX(1);
+    opacity: 0.2;
+  }
+}
+
+.animate-airflow {
+  animation: airflow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 122, 173, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(0, 122, 173, 0);
+  }
+}
+
+.animate-glow-pulse {
+  animation: pulse-subtle 2.5s infinite;
+}
